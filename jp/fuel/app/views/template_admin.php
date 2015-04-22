@@ -11,8 +11,10 @@
 	<?php echo Asset::js('lib/jquery-1.11.2.min.js'); ?><!-- Jquery -->
 	<?php echo Asset::js('lib/html5shiv.min.js'); ?><!-- Jquery -->
 	<?php echo Asset::js('lib/respond.min.js'); ?><!-- Jquery -->
+	<?php echo Asset::js('lib/jquery.ui.core.min.js'); ?><!-- Jquery ui-->
 	<?php echo Asset::js('lib/jquery.validate.min.js'); ?><!-- Jquery -->
 	<?php echo Asset::js('lib/bootstrap.min.js'); ?><!-- Jquery -->
+	<?php echo Asset::js('lib/ckeditor.js'); ?><!-- ckeditor -->
 	<?php echo Asset::js('common/index.js'); ?><!-- Jquery -->
 	<?php echo Asset::css('bootstrap.min.css'); ?><!-- bootstrap -->
 	<?php echo Asset::css('bootstrap-theme.min.css'); ?><!-- Foundation -->
@@ -31,7 +33,6 @@
 			<div class="col-md-3">
 				<div class="panel panel-primary">
 					<div class="panel-heading">Quan ly</div>
-
 					<ul class="list-group">
 						<li class="list-group-item"><i class="glyphicon glyphicon-user"></i>: &nbsp;&nbsp;<a href="">Member</a></li>
 						<li class="list-group-item"><i class="glyphicon glyphicon-book"></i>: &nbsp;&nbsp;<a href="">Ngữ pháp</a></li>

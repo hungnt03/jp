@@ -60,4 +60,12 @@ class Model_Character extends Model
 		))->execute();
 		return $insert_id;
 	}
+
+	public static function get_all_data_char()
+	{
+		$query = DB::select('id_char','name')
+			->from('character')
+			->execute()->as_array();
+		return $query;
+	}
 }
