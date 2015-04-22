@@ -49,7 +49,7 @@ class Controller_Admin_Character extends Controller_Admin
 			$type = Input::get('type');
 			if($type == 1) {
 				$id = Input::get('id');
-
+				echo $id;
 			}
 
 		}
