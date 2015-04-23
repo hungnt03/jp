@@ -14,9 +14,13 @@
 	<?php echo Asset::js('lib/jquery.ui.core.min.js'); ?><!-- Jquery ui-->
 	<?php echo Asset::js('lib/jquery.validate.min.js'); ?><!-- Jquery -->
 	<?php echo Asset::js('lib/bootstrap.min.js'); ?><!-- Jquery -->
-	<?php echo Asset::js('lib/ckeditor.js'); ?><!-- ckeditor -->
 	<?php echo Asset::js('common/index.js'); ?><!-- Jquery -->
+<!--	start tiny-->
+	<script type="text/javascript" src="<?php echo \Config::get('base_url'); ?>assets/plugin/ckfinder/ckfinder.js"></script>
+	<script type="text/javascript" src="<?php echo \Config::get('base_url'); ?>assets/plugin/ckeditor/ckeditor.js"></script>
+
 	<?php echo Asset::css('bootstrap.min.css'); ?><!-- bootstrap -->
+	<?php echo Asset::css('jquery-ui.css'); ?><!-- jquery.ui -->
 	<?php echo Asset::css('bootstrap-theme.min.css'); ?><!-- Foundation -->
 
 	<?php Asset::add_path('assets/css/'); ?><!-- Css customize -->

@@ -42,6 +42,16 @@ class Controller_Admin_Kanji extends Controller_Admin
 			'data_level' => $data_level,
 			'data_character' => $data_char,
 		);
+		if (\Input::method() == 'POST')
+		{
+			if(Input::post('type')==1){
+				DB::in_transaction();
+				DB::start_transaction();
+				$data_insert = array(
+
+				);
+			}
+		}
 		$this->template->content = View::forge($view, $data);
 	}
 

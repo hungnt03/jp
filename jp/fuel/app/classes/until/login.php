@@ -38,45 +38,6 @@ class Util_Login
 	}
 
 	/**
-	 * Get user info
-	 *
-	 * @return Object
-	 */
-//	public static function get_user_info()
-//	{
-//		$username = \Session::get('username');
-//		$user = \DB::select_array(array('*'))
-//			->where_open()
-//			->where('username', '=', $username)
-//			->where_close()
-//			->from('user')
-//			->execute()->current();
-//		return $user;
-//	}
-
-	/**
-	 * Get element user login
-	 *
-	 * @param   $element : element of user object
-	 * @return  string
-	 */
-//	public static function get($element)
-//	{
-//		if ($element == 'username') {
-//			return \Session::get('username');
-//		} else {
-//			$username = \Session::get('username');
-//			$user = \DB::select_array(array('*'))
-//				->where_open()
-//				->where('username', '=', $username)
-//				->where_close()
-//				->from('user')
-//				->execute()->current();
-//			return $user[$element];
-//		}
-//	}
-
-	/**
 	 * Check status login of user
 	 *
 	 * @return  bool
@@ -110,64 +71,20 @@ class Util_Login
 		return true;
 	}
 
-	/**
-	 * Check the user exists
-	 *
-	 * @return  bool
-	 */
-//	public function validate_user($username = '', $password = '')
-//	{
-//		$username = trim($username) ? : trim(\Input::post('username'));
-//		$password = trim($password) ? : trim(\Input::post('password'));
-//
-//		if (empty($username) or empty($password)) {
-//			return false;
-//		}
-//
-//		$password = $this->hash_password($password);
-//		$user = \DB::select_array(array('*'))
-//			->where_open()
-//			->where('username', '=', $username)
-//			->where_close()
-//			->where('password', '=', $password)
-//			->where('status', '=', 1)
-//			->from('user')
-//			->execute()->current();
-//
-//		return $user ? : false;
-//	}
 
-	/**
-	 * Returns the hash object and creates it if necessary
-	 *
-	 * @return  PHPSecLib\Crypt_Hash
-	 */
-	public function hasher()
+	public static function get($element)
 	{
-		is_null($this->hasher) and $this->hasher = new \PHPSecLib\Crypt_Hash();
-
-		return $this->hasher;
-	}
-
-	/**
-	 * Default password hash method
-	 *
-	 * @param   string
-	 * @return  string
-	 */
-	public function hash_password($password)
-	{
-		return base64_encode($this->hasher()->pbkdf2($password, 'put_your_salt_here', 10000, 32));
-	}
-
-	/**
-	 * Logout user
-	 *
-	 * @return  bool
-	 */
-	public function logout()
-	{
-		\Session::delete('username');
-		return true;
+		if ($element == 'username') {
+			return \Session::get('username');
+		} else {
+			$username = \Session::get('username');
+			$user = \DB::select_array(array('*'))
+				->where_open()
+				->where('username', '=', $username)
+				->where_close()
+				->from('user')
+				->execute()->current();
+			return $user[$element];
+		}
 	}
 }

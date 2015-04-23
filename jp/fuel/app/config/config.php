@@ -309,6 +309,11 @@ return array(
 		 * If you don't want the lang in a group use null as groupname.
 		 */
 		// 'language'  => array(),
+		 'folders' => array(
+			'css' => array('assets/css'),
+			'js'  => array('assets/js'),
+			'img' => array('assets/img/'),
+		 ),
 	 ),
 
 );
